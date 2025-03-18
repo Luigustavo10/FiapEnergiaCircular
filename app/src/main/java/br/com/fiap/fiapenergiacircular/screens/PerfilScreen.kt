@@ -1,7 +1,5 @@
 package br.com.fiap.fiapenergiacircular.screens
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -49,11 +47,11 @@ fun PerfilScreen(navController: NavController) {
         Spacer(modifier = Modifier.height(16.dp))
 
         Button(
-            onClick = {  },
-            colors =  ButtonDefaults.buttonColors(containerColor = Color(0xFF1B5E20)),
+            onClick = {},
+            colors =  ButtonDefaults.buttonColors(containerColor = Color(0xFF2E7D32)),
             modifier = Modifier.fillMaxWidth()
         ) {
-            Text(text = "Editar Perfil")
+            Text(text = "Editar Perfil", color = Color.White)
         }
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -61,15 +59,21 @@ fun PerfilScreen(navController: NavController) {
 
         Button(
             onClick = {},
-            colors =  ButtonDefaults.buttonColors(containerColor = Color(0xFF1B5E20)),
+            colors =  ButtonDefaults.buttonColors(containerColor = Color(0xFF2E7D32)),
             modifier = Modifier.fillMaxWidth()
         ) {
-            Text(text = "Ver Avaliações")
+            Text(text = "Ver Avaliações", color = Color.White)
         }
 
         Spacer(modifier = Modifier.height(16.dp))
 
+        Button(
+            onClick = { navController.navigate("menu") },
+            modifier = Modifier.fillMaxWidth(),
+            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF2E7D32))
+        ) {
+            Text("Voltar ao Menu", color = Color.White)
+        }
 
-        Text(text = "Meus Itens", fontSize = 20.sp, fontWeight = FontWeight.Bold)
     }
 }

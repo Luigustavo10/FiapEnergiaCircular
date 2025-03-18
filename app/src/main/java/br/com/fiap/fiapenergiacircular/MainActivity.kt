@@ -1,5 +1,6 @@
 package br.com.fiap.fiapenergiacircular
 
+import DetalhesItemScreen
 import MenuScreen
 import android.os.Bundle
 import br.com.fiap.fiapenergiacircular.screens.LoginScreen
@@ -31,30 +32,17 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             FiapEnergiaCircularTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
+                Surface(modifier = Modifier.fillMaxSize()) {
                     val navController = rememberNavController()
                     NavHost(
                         navController = navController,
-                        startDestination = "login",
+                        startDestination = "login"
                     ) {
-                        composable(route = "login") {
-                            LoginScreen(navController)
-                        }
-                        composable(route = "cadastro") {
-                            CadastroScreen(navController)
-                        }
-                        composable(route = "menu") {
-                            MenuScreen(navController)
-                        }
-                        composable(route = "pedidos") {
-                            PedidosScreen(navController, cliente = "FIAP")
-                        }
-                        composable(route = "perfil") {
-                            PerfilScreen(navController)
-                        }
+                        composable("login") { LoginScreen(navController) }
+                        composable("cadastro") { CadastroScreen(navController) }
+                        composable("menu") { MenuScreen(navController) }
+                        composable("pedidos") { PedidosScreen(navController, "FIAP") }
+                        composable("perfil") { PerfilScreen(navController) }
                     }
                 }
             }
