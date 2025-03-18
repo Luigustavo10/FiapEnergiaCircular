@@ -81,25 +81,13 @@ fun MenuScreen(navController: NavController) {
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            Button(
-                onClick = { navController.navigate("adicionar_item") },
-                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF1B5E20)),
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                Icon(Icons.Default.Add, contentDescription = "Adicionar", tint = Color.White)
-                Spacer(modifier = Modifier.width(8.dp))
-                Text("Adicionar Item", color = Color.White)
-            }
-
-            Spacer(modifier = Modifier.height(16.dp))
-
             LazyColumn {
                 items(produtos) { produto ->
                     Card(
                         modifier = Modifier
                             .fillMaxWidth()
                             .padding(vertical = 8.dp)
-                            .clickable { navController.navigate("detalhes_item/$produto") },
+                            .clickable { navController.navigate("lista") },
                         colors = CardDefaults.cardColors(containerColor = Color(0xFFC8E6C9))
                     ) {
                         Row(modifier = Modifier.padding(16.dp)) {
@@ -119,21 +107,30 @@ fun MenuScreen(navController: NavController) {
 
 @Composable
 fun BottomNavigationBar(navController: NavController) {
-    val items = listOf(
-        Pair("Home", Icons.Default.Home),
-        Pair("Pedidos", Icons.Default.ShoppingCart),
-        Pair("Perfil", Icons.Default.Person)
-    )
-
     NavigationBar(containerColor = Color(0xFF388E3C)) {
-        items.forEach { (label, icon) ->
-            NavigationBarItem(
-                selected = false,
-                onClick = {navController.navigate("perfil") },
-                icon = { Icon(imageVector = icon, contentDescription = label, tint = Color.White) },
-                label = { Text(label, color = Color.White) }
-            )
-        }
+        // Item Home
+        NavigationBarItem(
+            selected = false,
+            onClick = { navController.navigate("menu") },
+            icon = { Icon(Icons.Default.Home, "Home", tint = Color.White) },
+            label = { Text("Home", color = Color.White) }
+        )
+
+        // Item Pedidos
+        NavigationBarItem(
+            selected = false,
+            onClick = { navController.navigate("pedidos") },
+            icon = { Icon(Icons.Default.ShoppingCart, "Pedidos", tint = Color.White) },
+            label = { Text("Pedidos", color = Color.White) }
+        )
+
+        // Item Perfil
+        NavigationBarItem(
+            selected = false,
+            onClick = { navController.navigate("perfil") },
+            icon = { Icon(Icons.Default.Person, "Perfil", tint = Color.White) },
+            label = { Text("Perfil", color = Color.White) }
+        )
     }
 }
 
