@@ -19,6 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
@@ -29,13 +30,23 @@ import br.com.fiap.fiapenergiacircular.R
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun MenuScreen(navController: NavController) {
-    val categorias = listOf("Eletrodomésticos", "Roupas", "Móveis", "Eletrônicos", "Livros")
-    val produtos = listOf("Geladeira", "Camiseta", "Sofá", "Notebook", "Livro Kotlin")
+    val categorias = listOf(
+        stringResource(id = R.string.eletrodomestico),
+        stringResource(id = R.string.roupas),
+        stringResource(id = R.string.moveis),
+        stringResource(id = R.string.eletronicos),
+        stringResource(id = R.string.livros))
+    val produtos = listOf(
+        stringResource(id = R.string.geladeira),
+        stringResource(id = R.string.camiseta),
+        stringResource(id = R.string.sofa),
+        stringResource(id = R.string.notebook),
+        stringResource(id = R.string.livro_kotlin))
 
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { Text("Economia Circular", color = Color.White) },
+                title = { Text(stringResource(id = R.string.app_name), color = Color.White) },
                 navigationIcon = {
                     IconButton(onClick = { /* Ação do menu lateral */ }) {
                         Icon(Icons.Default.Menu, contentDescription = "Menu", tint = Color.White)
@@ -56,7 +67,7 @@ fun MenuScreen(navController: NavController) {
             OutlinedTextField(
                 value = "",
                 onValueChange = {},
-                placeholder = { Text("Buscar produtos...") },
+                placeholder = { Text(stringResource(id = R.string.buscar_produtos)) },
                 leadingIcon = { Icon(Icons.Default.Search, contentDescription = "Buscar", tint = Color(0xFF2E7D32)) },
                 modifier = Modifier.fillMaxWidth(),
                 colors = TextFieldDefaults.outlinedTextFieldColors(
@@ -95,7 +106,8 @@ fun MenuScreen(navController: NavController) {
                             Spacer(modifier = Modifier.width(8.dp))
                             Column {
                                 Text(produto, fontSize = 18.sp, fontWeight = FontWeight.Bold, color = Color(0xFF1B5E20))
-                                Text("Descrição do $produto", fontSize = 14.sp, color = Color(0xFF388E3C))
+                                //Text("Descrição do $produto", fontSize = 14.sp, color = Color(0xFF388E3C))
+                                Text(stringResource(id = R.string.descricao_produto), fontSize = 14.sp, color = Color(0xFF388E3C))
                             }
                         }
                     }
@@ -113,7 +125,7 @@ fun BottomNavigationBar(navController: NavController) {
             selected = false,
             onClick = { navController.navigate("menu") },
             icon = { Icon(Icons.Default.Home, "Home", tint = Color.White) },
-            label = { Text("Home", color = Color.White) }
+            label = { Text(stringResource(id = R.string.home), color = Color.White) }
         )
 
         // Item Pedidos
@@ -121,7 +133,7 @@ fun BottomNavigationBar(navController: NavController) {
             selected = false,
             onClick = { navController.navigate("pedidos") },
             icon = { Icon(Icons.Default.ShoppingCart, "Pedidos", tint = Color.White) },
-            label = { Text("Pedidos", color = Color.White) }
+            label = { Text(stringResource(id = R.string.pedidos), color = Color.White) }
         )
 
         // Item Perfil
@@ -129,7 +141,7 @@ fun BottomNavigationBar(navController: NavController) {
             selected = false,
             onClick = { navController.navigate("perfil") },
             icon = { Icon(Icons.Default.Person, "Perfil", tint = Color.White) },
-            label = { Text("Perfil", color = Color.White) }
+            label = { Text(stringResource(id = R.string.perfil), color = Color.White) }
         )
     }
 }

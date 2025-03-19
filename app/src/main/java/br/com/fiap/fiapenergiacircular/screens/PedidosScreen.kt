@@ -10,10 +10,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import br.com.fiap.fiapenergiacircular.R
 
 @Composable
 fun PedidosScreen(navController: NavController, cliente: String?) {
@@ -30,7 +32,8 @@ fun PedidosScreen(navController: NavController, cliente: String?) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = "Seus Pedidos - ${cliente ?: "Visitante"}",
+            //text = "Seus Pedidos - ${cliente ?: "Visitante"}",
+            text = stringResource(id = R.string.pedidos_titulo),
             style = MaterialTheme.typography.headlineMedium,
             color = Color(0xFF2E7D32),
             fontSize = 24.sp,
@@ -54,7 +57,7 @@ fun PedidosScreen(navController: NavController, cliente: String?) {
             modifier = Modifier.fillMaxWidth(),
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF2E7D32))
         ) {
-            Text("Voltar ao Menu", color = Color.White)
+            Text(stringResource(id = R.string.voltar_menu), color = Color.White)
         }
     }
 }

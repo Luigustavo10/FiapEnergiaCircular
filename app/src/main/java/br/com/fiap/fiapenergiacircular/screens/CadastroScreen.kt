@@ -9,6 +9,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -41,7 +42,7 @@ fun CadastroScreen(navController: NavController) {
         )
 
         Text(
-            text = "Crie sua Conta",
+            text = stringResource(id = R.string.cadastro_conta_titulo),
             style = MaterialTheme.typography.headlineMedium,
             color = Color(0xFF2E7D32),
             fontSize = 24.sp
@@ -53,7 +54,7 @@ fun CadastroScreen(navController: NavController) {
         OutlinedTextField(
             value = nome,
             onValueChange = { nome = it },
-            label = { Text("Nome") },
+            label = { Text(stringResource(id = R.string.nome)) },
             modifier = Modifier.fillMaxWidth(),
             textStyle = TextStyle(color = Color.Black),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
@@ -69,7 +70,7 @@ fun CadastroScreen(navController: NavController) {
         OutlinedTextField(
             value = email,
             onValueChange = { email = it },
-            label = { Text("E-mail") },
+            label = { Text(stringResource(id = R.string.email)) },
             modifier = Modifier.fillMaxWidth(),
             textStyle = TextStyle(color = Color.Black),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
@@ -85,7 +86,7 @@ fun CadastroScreen(navController: NavController) {
         OutlinedTextField(
             value = senha,
             onValueChange = { senha = it },
-            label = { Text("Senha") },
+            label = { Text(stringResource(id = R.string.senha)) },
             visualTransformation = PasswordVisualTransformation(),
             modifier = Modifier.fillMaxWidth(),
             textStyle = TextStyle(color = Color.Black),
@@ -104,7 +105,7 @@ fun CadastroScreen(navController: NavController) {
             modifier = Modifier.fillMaxWidth(),
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF2E7D32))
         ) {
-            Text("Cadastrar", color = Color.White)
+            Text(stringResource(id = R.string.cadastrar), color = Color.White)
         }
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -114,7 +115,7 @@ fun CadastroScreen(navController: NavController) {
             onClick = { navController.navigate("login") },
             modifier = Modifier.fillMaxWidth()
         ) {
-            Text("Já tem uma conta? Faça Login", color = Color(0xFF43A047))
+            Text(stringResource(id = R.string.login_cadastrado), color = Color(0xFF43A047))
         }
     }
 }

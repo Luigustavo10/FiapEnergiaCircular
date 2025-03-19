@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Economia Circular</string>
+    <string name="login_titulo">Bem-vindo(a)!</string>
+    <string name="email">E-mail</string>
+    <string name="senha">Senha</string>
+    <string name="entrar">Entrar</string>
+    <string name="entrar_google">Entrar com Google</string>
+    <string name="criar_conta">Criar Conta</string>
+    <string name="cadastro_conta_titulo">Crie sua Conta</string>
+    <string name="nome">Nome</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="login_cadastrado">Já tem uma conta? Faça login</string>
+    <string name="eletrodomestico">Eletrodomésticos</string>
+    <string name="roupas">Roupas</string>
+    <string name="moveis">Móveis</string>
+    <string name="eletronicos">Eletrônicos</string>
+    <string name="livros">Livros</string>
+    <string name="geladeira">Geladeira</string>
+    <string name="camiseta">Camiseta</string>
+    <string name="sofa">Sofá</string>
+    <string name="notebook">Notebook</string>
+    <string name="livro_kotlin">Livro Kotlin</string>
+    <string name="buscar_produtos">Buscar produtos...</string>
+    <string name="descricao_produto">Descrição do Produto</string>
+    <string name="home">Home</string>
+    <string name="pedidos">Pedidos</string>
+    <string name="perfil">Perfil</string>
+    <string name="pedidos_titulo">Meus Pedidos</string>
+    <string name="voltar_menu">Voltar ao Menu</string>
+    <string name="editar_perfil">Editar Perfil</string>
+    <string name="ver_avaliacoes">Ver Avaliações</string>
+</resources>

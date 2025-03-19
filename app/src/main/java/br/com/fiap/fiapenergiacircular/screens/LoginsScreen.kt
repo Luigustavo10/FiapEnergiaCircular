@@ -26,6 +26,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.ui.input.pointer.motionEventSpy
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -59,7 +60,7 @@ fun LoginScreen(navController: NavController) {
         )
 
         Text(
-            text = "Bem-vindo!",
+            text = stringResource(id = R.string.login_titulo),
             style = MaterialTheme.typography.headlineMedium,
             color = Color(0xFF2E7D32),
             fontSize = 24.sp
@@ -71,7 +72,7 @@ fun LoginScreen(navController: NavController) {
         OutlinedTextField(
             value = email,
             onValueChange = { email = it },
-            label = { Text("E-mail") },
+            label = { Text(stringResource(id = R.string.email)) },
             modifier = Modifier.fillMaxWidth(),
             textStyle = TextStyle(color = Color.Black),
             keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Email),
@@ -87,7 +88,7 @@ fun LoginScreen(navController: NavController) {
         OutlinedTextField(
             value = senha,
             onValueChange = { senha = it },
-            label = { Text("Senha") },
+            label = { Text(stringResource(id = R.string.senha)) },
             visualTransformation = PasswordVisualTransformation(),
             modifier = Modifier.fillMaxWidth(),
             textStyle = TextStyle(color = Color.Black),
@@ -106,7 +107,7 @@ fun LoginScreen(navController: NavController) {
             modifier = Modifier.fillMaxWidth(),
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF43A047))
         ) {
-            Text("Entrar", color = Color.White)
+            Text(stringResource(id = R.string.entrar), color = Color.White)
         }
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -132,7 +133,7 @@ fun LoginScreen(navController: NavController) {
             modifier = Modifier.fillMaxWidth(),
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFDB4437))
         ) {
-            Text("Entrar com Google", color = Color.White)
+            Text(stringResource(id = R.string.entrar_google), color = Color.White)
         }
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -142,7 +143,7 @@ fun LoginScreen(navController: NavController) {
             onClick = { navController.navigate("cadastro") },
             modifier = Modifier.fillMaxWidth()
         ) {
-            Text("Criar Conta", color = Color(0xFF43A047))
+            Text(stringResource(id = R.string.criar_conta), color = Color(0xFF43A047))
         }
     }
 }

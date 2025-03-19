@@ -1,3 +1,32 @@
 <resources>
-    <string name="app_name">FiapEnergiaCircular</string>
+    <string name="app_name">Circular Economy</string>
+    <string name="login_titulo">Welcome!</string>
+    <string name="email">E-mail</string>
+    <string name="senha">Password</string>
+    <string name="entrar">Enter</string>
+    <string name="entrar_google">Enter with Google</string>
+    <string name="criar_conta">Create an Account</string>
+    <string name="cadastro_conta_titulo">Create your Account</string>
+    <string name="nome">Name</string>
+    <string name="cadastrar">Register</string>
+    <string name="login_cadastrado">Already have an account? Log in</string>
+    <string name="eletrodomestico">Home appliances</string>
+    <string name="roupas">Clothes</string>
+    <string name="moveis">Furniture</string>
+    <string name="eletronicos">Electronics</string>
+    <string name="livros">Books</string>
+    <string name="geladeira">Refrigerator</string>
+    <string name="camiseta">T-shirt</string>
+    <string name="sofa">Sofa</string>
+    <string name="notebook">Notebook</string>
+    <string name="livro_kotlin">Kotlin Book</string>
+    <string name="buscar_produtos">Search products...</string>
+    <string name="descricao_produto">Product Description</string>
+    <string name="home">Home</string>
+    <string name="pedidos">Orders</string>
+    <string name="perfil">Profile</string>
+    <string name="pedidos_titulo">My Orders</string>
+    <string name="voltar_menu">Return to Menu</string>
+    <string name="editar_perfil">Edit Profile</string>
+    <string name="ver_avaliacoes">View Reviews</string>
 </resources>

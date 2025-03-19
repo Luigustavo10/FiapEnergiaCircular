@@ -17,10 +17,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import br.com.fiap.fiapenergiacircular.R
 
 @Composable
 fun PerfilScreen(navController: NavController) {
@@ -41,7 +43,7 @@ fun PerfilScreen(navController: NavController) {
         Spacer(modifier = Modifier.height(8.dp))
 
 
-        Text(text = "Atividade Fiap", fontSize = 22.sp, fontWeight = FontWeight.Bold)
+        Text(text = "Atividade FIAP", fontSize = 22.sp, fontWeight = FontWeight.Bold)
         Text(text = "atividade.fiap@gmail.com", fontSize = 16.sp, color = Color.Gray)
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -51,7 +53,7 @@ fun PerfilScreen(navController: NavController) {
             colors =  ButtonDefaults.buttonColors(containerColor = Color(0xFF2E7D32)),
             modifier = Modifier.fillMaxWidth()
         ) {
-            Text(text = "Editar Perfil", color = Color.White)
+            Text(text = stringResource(id = R.string.editar_perfil), color = Color.White)
         }
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -62,7 +64,7 @@ fun PerfilScreen(navController: NavController) {
             colors =  ButtonDefaults.buttonColors(containerColor = Color(0xFF2E7D32)),
             modifier = Modifier.fillMaxWidth()
         ) {
-            Text(text = "Ver Avaliações", color = Color.White)
+            Text(text = stringResource(id = R.string.ver_avaliacoes), color = Color.White)
         }
 
         Spacer(modifier = Modifier.height(16.dp))
@@ -72,7 +74,7 @@ fun PerfilScreen(navController: NavController) {
             modifier = Modifier.fillMaxWidth(),
             colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF2E7D32))
         ) {
-            Text("Voltar ao Menu", color = Color.White)
+            Text(stringResource(id = R.string.voltar_menu), color = Color.White)
         }
 
     }
